@@ -1,0 +1,5 @@
+INSERT INTO `user`(name,age,isAdmin,city,email) VALUES ('Алекс',19,0,'Москва','al@yandex.com')
+INSERT INTO `user`(name,age,isAdmin,city,email) VALUES ('Лизи',22,1,'Архангельск','lizi@yandex.com')
+INSERT INTO `user`(name,age,isAdmin,city,email) VALUES ('Мэтью',17,0,'Москва','math@yandex.com')
+INSERT INTO `user`(name,age,isAdmin,city,email) VALUES ('Паша',22,0,'Тверь','pasha@google.com')
+INSERT INTO `user`(name,age,isAdmin,city,email) VALUES ('Синди',19,0,'Новосибирск','sindy@yandex.com')

@@ -22,7 +22,7 @@ public class ExcelDocument extends AbstractExcelView {
     protected void buildExcelDocument(Map<String, Object> map, HSSFWorkbook workbook, HttpServletRequest httpServletRequest, HttpServletResponse response) throws Exception {
         HSSFSheet excelSheet = workbook.createSheet("Информация о пользователях");
 
-        response.setHeader("Content-Disposition","attachment; filename=excelDocument.xls");
+        response.setHeader("Content-Disposition", "attachment; filename=excelDocument.xls");
 
         Font font = workbook.createFont();
         font.setFontName("Arial");
@@ -34,11 +34,11 @@ public class ExcelDocument extends AbstractExcelView {
         styleHeader.setFillPattern(CellStyle.SOLID_FOREGROUND);
         styleHeader.setFont(font);
 
-        setExcelHeader(excelSheet,styleHeader);
+        setExcelHeader(excelSheet, styleHeader);
 
         List<User> users = (List<User>) map.get("modelObject");
         int rowCount = 1;
-        for(User user:users){
+        for (User user : users) {
             HSSFRow row = excelSheet.createRow(rowCount++);
             row.createCell(0).setCellValue(user.getName());
             row.createCell(1).setCellValue(user.isAdmin());

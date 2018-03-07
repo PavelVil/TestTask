@@ -16,16 +16,12 @@ import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-
+    @Autowired
     private SessionFactory sessionFactory;
-
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
 
     @Override
     public List<User> getAll() {
-        return (List<User>)sessionFactory.getCurrentSession().createQuery("from User").list();
+        return (List<User>) sessionFactory.getCurrentSession().createQuery("from User").list();
     }
 
     @Override
@@ -40,14 +36,14 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getById(int id) {
-        return sessionFactory.getCurrentSession().get(User.class,id);
+        return sessionFactory.getCurrentSession().get(User.class, id);
     }
 
     @Override
     public void delete(int id) {
         Session session = sessionFactory.getCurrentSession();
-        User user = session.get(User.class,id);
-        if (user!=null){
+        User user = session.get(User.class, id);
+        if (user != null) {
             session.delete(user);
         }
     }
@@ -55,7 +51,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List<User> getByName(String name) {
         Session session = sessionFactory.getCurrentSession();
-        Query q = session.createQuery("from User where name=:name").setString("name",name);
-        return (List<User>)q.list();
+        Query q = session.createQuery("from User where name=:name").setString("name", name);
+        return (List<User>) q.list();
     }
 }

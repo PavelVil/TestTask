@@ -6,9 +6,9 @@
     <!--бины для работы с представлением в пдф и ексель-->
 
     <!-- When a controller returns excelDocument render the model with the spring.mvc.excelpdf.ExcelDocument class -->
-    <bean id="excelDocument"  class="crud.model.ExcelDocument" />
+    <bean id="excelDocument" class="crud.model.ExcelDocument"/>
 
     <!-- When a controller returns pdfDocument render the model with the spring.mvc.excelpdf.PDFDocument class -->
-    <bean id="pdfDocument"  class="crud.model.PdfDocument"/>
+    <bean id="pdfDocument" class="crud.model.PdfDocument"/>
 
 </beans>

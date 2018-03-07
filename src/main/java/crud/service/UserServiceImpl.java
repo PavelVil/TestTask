@@ -2,6 +2,7 @@ package crud.service;
 
 import crud.dao.UserDao;
 import crud.model.User;
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,13 +12,10 @@ import java.util.List;
  * Created by Pavel on 30.06.2017.
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
+    @Autowired
     private UserDao userDao;
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
 
     @Override
     @Transactional

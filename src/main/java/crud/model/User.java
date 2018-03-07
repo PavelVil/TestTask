@@ -31,12 +31,12 @@ public class User {
     @Column(name = "isAdmin")
     private boolean isAdmin;
     @Column(name = "age")
-    @DecimalMin(value = "16",message = "Минимальный возраст - 16 лет")
+    @DecimalMin(value = "16", message = "Минимальный возраст - 16 лет")
     private int age;
     @Column(name = "createDate")
-    private Date createDate =  new Date();
+    private Date createDate = new Date();
     @Column(name = "city")
-    @Size (max = 60,message = "Название города - не больше 60 символов")
+    @Size(max = 60, message = "Название города - не больше 60 символов")
     private String city;
     @Column(name = "email")
     private String email;
@@ -67,6 +67,7 @@ public class User {
     public int getId() {
         return id;
     }
+
     @XmlElement
     public void setId(int id) {
         this.id = id;
@@ -75,6 +76,7 @@ public class User {
     public String getName() {
         return name;
     }
+
     @XmlElement
     public void setName(String name) {
         this.name = name;
@@ -83,6 +85,7 @@ public class User {
     public boolean isAdmin() {
         return isAdmin;
     }
+
     @XmlElement
     public void setAdmin(boolean admin) {
         isAdmin = admin;
@@ -91,12 +94,12 @@ public class User {
     public Date getCreateDate() {
         return createDate;
     }
+
     @XmlElement
     public void setCreateDate(Date createDate) {
-//        SimpleDateFormat formatDate = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
-//        formatDate.format(createDate);
         this.createDate = createDate;
     }
+
     @XmlElement
     public void setAge(int age) {
         this.age = age;
@@ -109,6 +112,7 @@ public class User {
     public String getCity() {
         return city;
     }
+
     @XmlElement
     public void setCity(String city) {
         this.city = city;
@@ -117,6 +121,7 @@ public class User {
     public String getEmail() {
         return email;
     }
+
     @XmlElement
     public void setEmail(String email) {
         this.email = email;
@@ -125,6 +130,7 @@ public class User {
     public byte[] getPhoto() {
         return photo;
     }
+
     @XmlTransient
     public void setPhoto(byte[] photo) {
         this.photo = photo;

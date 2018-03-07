@@ -52,7 +52,7 @@
             <div style="background-image: url('http://bootstraptema.ru/images/bg/bg-4.png')" class="panel-body text-center bg-center">
                 <div class="row profile-name">
                     <div class="col-xs-12 text-white">
-                        <img src="/ShowPhoto?id=${user.id}" alt="Image" class="img-thumbnail img-circle profile-images">
+                        <img src="/user/${user.id}/photo" alt="Image" class="img-thumbnail img-circle profile-images">
                         <h3>${user.name}</h3>
                         <p>
                             ${user.email}</p>

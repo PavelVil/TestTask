@@ -42,8 +42,8 @@ public class PdfDocument extends AbstractPdfView {
         table.addCell(header5);
         table.addCell(header6);
 
-        List<User> users = (List<User>)map.get("modelObject");
-        for(User user:users){
+        List<User> users = (List<User>) map.get("modelObject");
+        for (User user : users) {
             table.addCell(user.getName());
             table.addCell(String.valueOf(user.isAdmin()));
             table.addCell(String.valueOf(user.getAge()));
@@ -53,7 +53,7 @@ public class PdfDocument extends AbstractPdfView {
         }
         String FONT_LOCATION = "/font/tahoma.ttf";
         BaseFont baseFont = BaseFont.createFont(FONT_LOCATION, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-        document.add(new Paragraph("Русский",new Font(baseFont)));
+        document.add(new Paragraph("Русский", new Font(baseFont)));
         document.add(table);
     }
 }

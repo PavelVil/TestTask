@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TaskReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e5c331bf-7646-4e9e-b7cb-21b1165b35de">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <style name="Default" isDefault="true" pdfFontName="F:\projectsIDEA\TestTask\webapp\resources\fonts\arial.ttf" pdfEncoding="Cp1251"/>
+    <parameter name="datasource" class="java.util.List"/>
+    <queryString language="hql">
+        <![CDATA[select id, name, age from User]] >
+  </queryString>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <field name="id" class="java.lang.Integer">
+        <!--<fieldDescription><![CDATA[]]></fieldDescription>-->
+    </field>
+    <field name="name" class="java.lang.String"/>
+    <field name="age" class="java.lang.Integer"/>
+    <title>
+        <band height="79" splitType="Stretch">
+            <textField>
+                <reportElement x="230" y="10" width="100" height="30" uuid="67aace83-ac01-45b0-8f3d-617c412569dd"/>
+                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <textField>
+                <reportElement x="100" y="20" width="100" height="30" uuid="4f5588b6-56cc-479c-9736-77cacb8edf0a"/>
+
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="250" y="20" width="100" height="30" uuid="ef023ff9-c1d0-459f-98c9-f36c1bd5a3db"/>
+                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="400" y="20" width="100" height="30" uuid="23ad5e72-6398-4460-ae74-919b1353721d"/>
+                <textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

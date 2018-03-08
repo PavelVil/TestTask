@@ -3,6 +3,8 @@ package crud.controller;
 
 import crud.model.User;
 import crud.service.UserService;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
@@ -11,8 +13,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Pavel on 30.06.2017.
@@ -23,6 +29,25 @@ public class MainController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping(value = "/report", method = RequestMethod.GET)
+    @ResponseBody
+    public void getReport(HttpServletResponse response) throws JRException, IOException {
+        InputStream jasperStream = new FileInputStream(MainController.class.getResource("/reports/JREmp1.jrxml").getFile());
+
+        Map<String, Object> params = new HashMap<>();
+        List<User> userList = userService.getAll();
+        JRDataSource dataSource = new JRBeanCollectionDataSource(userList);
+        params.put("datasource", dataSource);
+        JasperReport jasperReport
+                = JasperCompileManager.compileReport(jasperStream);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, dataSource);
+
+        response.setContentType("application/x-pdf");
+        response.setHeader("Content-disposition", "inline; filename=helloWorldReport.pdf");
+
+        final OutputStream outStream = response.getOutputStream();
+        JasperExportManager.exportReportToPdfStream(jasperPrint, outStream);
+    }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String redirectToMain() {

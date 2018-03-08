@@ -10,6 +10,7 @@
         <param-value>
             /WEB-INF/config/applicationContext.xml
             /WEB-INF/config/dbContext.xml
+            classpath:/reports/jasper-views.xml
         </param-value>
     </context-param>
 

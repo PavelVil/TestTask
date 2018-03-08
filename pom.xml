@@ -27,18 +27,12 @@
         <logback.version>1.0.13</logback.version>
         <slf4j.version>1.7.13</slf4j.version>
 
-        <!-- jackson json JSON Processing API -->
-        <!--<jackson.databind-version>2.2.3</jackson.databind-version>-->
-
         <!-- Hibernate / JPA -->
         <hibernate.version>5.0.1.Final</hibernate.version>
         <!-- I don't know why, but with 5.0.5 final app not working! -->
 
         <!-- Spring Data -->
         <spring-framework.data.version>1.9.1.RELEASE</spring-framework.data.version>
-
-        <!-- Quartz scheduling framework планировчщик задач-->
-        <!--<quartz.scheduling.version>2.2.1</quartz.scheduling.version>-->
 
     </properties>
 
@@ -118,13 +112,6 @@
         <version>2.1.5</version>
         </dependency>
 
-        <!--&lt;!&ndash; HSQLDB embedded database. Встроенная база данных&ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>org.hsqldb</groupId>-->
-        <!--<artifactId>hsqldb</artifactId>-->
-        <!--<version>2.3.3</version>-->
-        <!--</dependency>-->
-
         <!-- Spring JDBC -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -160,32 +147,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!--&lt;!&ndash;Contains org.springframework.mail.javamail&ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework</groupId>-->
-        <!--<artifactId>spring-context-support</artifactId>-->
-        <!--<version>${spring-framework.version}</version>-->
-        <!--</dependency>-->
-
-        <!--&lt;!&ndash; Spring MVC Mail Related Dependency &ndash;&gt;-->
-        <!--<dependency>-->
-        <!--<groupId>javax.mail</groupId>-->
-        <!--<artifactId>mail</artifactId>-->
-        <!--<version>1.4.7</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.velocity</groupId>-->
-        <!--<artifactId>velocity</artifactId>-->
-        <!--<version>1.7</version>-->
-        <!--</dependency>-->
-
-        <!-- Spring REST jackson JSON Processing API -->
-        <!--<dependency>-->
-        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-        <!--<artifactId>jackson-databind</artifactId>-->
-        <!--<version>${jackson.databind-version}</version>-->
-        <!--</dependency>-->
-
         <!--Hibernate ORM-->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -207,12 +168,18 @@
             <version>${spring-framework.data.version}</version>
         </dependency>
 
-        <!-- Quartz scheduling framework -->
-        <!--<dependency>-->
-        <!--<groupId>org.quartz-scheduler</groupId>-->
-        <!--<artifactId>quartz</artifactId>-->
-        <!--<version>${quartz.scheduling.version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+
+        <!--Jasper-->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.2.0</version>
+        </dependency>
 
          <!--JAXB XML Binding (@XmlElement, @XMLRoot)-->
         <dependency>
@@ -221,23 +188,11 @@
         <version>2.2.10</version>
         </dependency>
 
-        <!--для парсинга в json(3 зависимости)-->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.8.7</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.7.9</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.8.7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.8.7</version>
-        </dependency>
-
 
     </dependencies>
 
